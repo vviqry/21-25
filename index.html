@@ -1,0 +1,1894 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>English Speaking Class — Book 1 (Chapter 21–25)</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-5px); }
+      40% { transform: translateX(5px); }
+      60% { transform: translateX(-4px); }
+      80% { transform: translateX(4px); }
+    }
+    .animate-fade-up {
+      animation: fadeSlideUp 0.22s ease-out forwards;
+    }
+    .animate-shake {
+      animation: shake 0.34s ease-in-out;
+    }
+    /* Hide scrollbar on horizontal filter strip */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-200 text-slate-800 antialiased selection:bg-indigo-100 selection:text-indigo-900">
+
+  <!-- Mobile-First App Shell (Full-width on mobile, max 480px centered on desktop) -->
+  <div id="app" class="max-w-[480px] mx-auto min-h-[100dvh] bg-slate-50 shadow-2xl flex flex-col relative overflow-x-hidden">
+
+    <!-- ==================== STICKY HEADER ==================== -->
+    <header id="stickyHeader" class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
+      <!-- Top Bar -->
+      <div class="px-3.5 pt-3 pb-2 flex items-center justify-between gap-2">
+        <div class="min-w-0">
+          <h1 class="text-sm font-extrabold text-slate-900 leading-tight truncate">
+            Book 1 • Chapter 21–25
+          </h1>
+          <div class="flex items-center gap-2 mt-0.5">
+            <span id="headerProgressBadge" class="text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/70 px-2 py-0.5 rounded-full">
+              0/50 Benar
+            </span>
+            <span id="headerCounterText" class="text-[11px] font-semibold text-slate-500">
+              Soal 1 / 50
+            </span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-1.5 shrink-0">
+          <button id="openEvalBtn" type="button" aria-label="Hasil dan Evaluasi" class="min-h-[38px] px-2.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 active:scale-95 text-indigo-700 text-xs font-bold flex items-center gap-1 transition">
+            <span>📊</span>
+            <span>Hasil</span>
+          </button>
+          <button id="openDrawerBtn" type="button" aria-label="Daftar Soal" class="min-h-[38px] px-3 rounded-xl bg-slate-900 hover:bg-slate-800 active:scale-95 text-white text-xs font-bold flex items-center gap-1.5 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <span>Daftar Soal</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Thin Global Progress Bar -->
+      <div class="w-full h-1.5 bg-slate-100">
+        <div id="globalProgressBar" class="h-full bg-gradient-to-r from-indigo-600 to-emerald-500 transition-all duration-300" style="width: 0%"></div>
+      </div>
+
+      <!-- Horizontal Scrollable Filter Bar -->
+      <div class="px-3.5 py-2 bg-slate-50/95 border-t border-slate-100 flex items-center gap-1.5 overflow-x-auto no-scrollbar">
+        <button data-filter="all" class="filter-chip shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-indigo-600 text-white transition active:scale-95">Semua (50)</button>
+        <button data-filter="ch21" class="filter-chip shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-600 transition active:scale-95">Ch. 21</button>
+        <button data-filter="ch22" class="filter-chip shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-600 transition active:scale-95">Ch. 22</button>
+        <button data-filter="ch23" class="filter-chip shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-600 transition active:scale-95">Ch. 23</button>
+        <button data-filter="ch24" class="filter-chip shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-600 transition active:scale-95">Ch. 24</button>
+        <button data-filter="ch25" class="filter-chip shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-600 transition active:scale-95">Ch. 25</button>
+        <button data-filter="pg" class="filter-chip shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-600 transition active:scale-95">PG (35)</button>
+        <button data-filter="pgk" class="filter-chip shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-600 transition active:scale-95">PGK (15)</button>
+      </div>
+
+      <!-- Active Wrong-Review Banner (visible only when filtering wrong questions) -->
+      <div id="wrongModeBanner" class="hidden px-3.5 py-1.5 bg-amber-50 border-t border-amber-200 flex items-center justify-between text-xs">
+        <span class="font-bold text-amber-800">🔁 Mode Ulang Soal Salah</span>
+        <button id="exitWrongModeBtn" type="button" class="font-extrabold text-indigo-700 underline">Tampilkan Semua</button>
+      </div>
+    </header>
+
+    <!-- ==================== QUIZ MAIN VIEW ==================== -->
+    <main id="quizView" class="flex-1 overflow-y-auto px-4 pt-4 pb-28">
+      <!-- Question Card -->
+      <article id="questionCard" class="bg-white rounded-3xl p-5 border border-slate-200/90 shadow-sm mb-4 animate-fade-up">
+        <!-- Badges Row -->
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+          <div class="flex flex-wrap items-center gap-1.5">
+            <span id="qChapterBadge" class="px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-indigo-50 text-indigo-700">
+              Chapter 21
+            </span>
+            <span id="qTypeBadge" class="px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-slate-100 text-slate-700">
+              Pilihan Ganda
+            </span>
+          </div>
+          <span id="qMetaBadge" class="text-xs font-extrabold text-slate-400">
+            #1
+          </span>
+        </div>
+
+        <!-- Topic Subtitle -->
+        <div id="qTopicLabel" class="text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1.5">
+          What Have You Done?
+        </div>
+
+        <!-- Question Text (min 16-17px for phone readability) -->
+        <h2 id="questionText" class="text-[16.5px] sm:text-[17.5px] font-bold text-slate-900 leading-relaxed">
+          Memuat pertanyaan...
+        </h2>
+
+        <!-- PGK Callout -->
+        <div id="pgkCallout" class="hidden mt-3 px-3.5 py-2.5 rounded-2xl bg-violet-50 border border-violet-200/80 text-xs font-semibold text-violet-800 flex items-start gap-2">
+          <span class="text-sm leading-none mt-0.5">☑️</span>
+          <span><strong>Pilihan Ganda Kompleks — Pilih lebih dari 1</strong> jawaban yang benar (2 atau 3 opsi).</span>
+        </div>
+      </article>
+
+      <!-- Options Container (A, B, C, D) -->
+      <div id="optionsContainer" class="space-y-3 mb-4">
+        <!-- Injected via JS -->
+      </div>
+
+      <!-- Feedback / Smart Auto-Correction Card -->
+      <div id="feedbackCard" class="hidden rounded-3xl p-4 border-2 mb-4 animate-fade-up">
+        <!-- Injected via JS -->
+      </div>
+    </main>
+
+    <!-- ==================== EVALUATION / RESULTS VIEW ==================== -->
+    <section id="evalView" class="hidden flex-1 overflow-y-auto px-4 pt-4 pb-10 animate-fade-up">
+      <!-- Score Hero Card -->
+      <div class="bg-gradient-to-br from-indigo-600 via-indigo-700 to-blue-700 rounded-3xl p-5 text-white text-center shadow-lg shadow-indigo-200 mb-4">
+        <div id="evalEmoji" class="text-4xl mb-1.5">📊</div>
+        <h2 class="text-xl font-extrabold">Hasil &amp; Evaluasi</h2>
+        <p id="evalSub" class="text-xs text-indigo-100 mt-1">English Speaking Class • Book 1 (Ch. 21–25)</p>
+
+        <div class="mt-4 grid grid-cols-2 gap-2.5">
+          <div class="bg-white/15 backdrop-blur-xs rounded-2xl p-3">
+            <div id="evalTotalPct" class="text-2xl font-extrabold">0%</div>
+            <div class="text-[11px] text-indigo-100 font-semibold mt-0.5">Skor Total (<span id="evalTotalCount">0/50</span>)</div>
+          </div>
+          <div class="bg-white/15 backdrop-blur-xs rounded-2xl p-3">
+            <div id="evalFirstTryPct" class="text-2xl font-extrabold">0%</div>
+            <div class="text-[11px] text-indigo-100 font-semibold mt-0.5">Benar 1x Coba</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Status Counters -->
+      <div class="grid grid-cols-3 gap-2 mb-4 text-center">
+        <div class="bg-white rounded-2xl p-3 border border-emerald-200 shadow-xs">
+          <div id="statSolved" class="text-xl font-extrabold text-emerald-600">0</div>
+          <div class="text-[11px] font-semibold text-slate-500 mt-0.5">Benar</div>
+        </div>
+        <div class="bg-white rounded-2xl p-3 border border-amber-200 shadow-xs">
+          <div id="statWrong" class="text-xl font-extrabold text-amber-600">0</div>
+          <div class="text-[11px] font-semibold text-slate-500 mt-0.5">Salah / Revisi</div>
+        </div>
+        <div class="bg-white rounded-2xl p-3 border border-slate-200 shadow-xs">
+          <div id="statUnanswered" class="text-xl font-extrabold text-slate-500">50</div>
+          <div class="text-[11px] font-semibold text-slate-500 mt-0.5">Belum Dijawab</div>
+        </div>
+      </div>
+
+      <!-- PG vs PGK Breakdown -->
+      <div class="bg-white rounded-3xl p-4 border border-slate-200/90 shadow-sm mb-4">
+        <h3 class="text-sm font-extrabold text-slate-800 mb-3">Ringkasan Tipe Soal</h3>
+        <div class="grid grid-cols-2 gap-2.5">
+          <div class="p-3 rounded-2xl bg-indigo-50/70 border border-indigo-100">
+            <div class="text-[11px] font-bold text-indigo-700">Pilihan Ganda (PG)</div>
+            <div id="evalPgScore" class="text-lg font-extrabold text-slate-900 mt-0.5">0 / 35</div>
+            <div id="evalPgSub" class="text-[11px] text-slate-500 font-medium">0% selesai</div>
+          </div>
+          <div class="p-3 rounded-2xl bg-violet-50/70 border border-violet-100">
+            <div class="text-[11px] font-bold text-violet-700">PG Kompleks (PGK)</div>
+            <div id="evalPgkScore" class="text-lg font-extrabold text-slate-900 mt-0.5">0 / 15</div>
+            <div id="evalPgkSub" class="text-[11px] text-slate-500 font-medium">0% selesai</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Per-Chapter Breakdown (Ch. 21–25) -->
+      <div class="bg-white rounded-3xl p-4 border border-slate-200/90 shadow-sm mb-5">
+        <h3 class="text-sm font-extrabold text-slate-800 mb-3">Rincian Skor per Chapter</h3>
+        <div id="evalChapterList" class="space-y-3">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="space-y-2.5">
+        <button id="retryWrongBtn" type="button" class="hidden w-full min-h-[50px] py-3 px-5 rounded-2xl bg-amber-500 hover:bg-amber-600 active:scale-[0.99] text-white font-extrabold text-sm shadow-md shadow-amber-200 transition">
+          🔁 Ulangi Soal yang Masih Salah
+        </button>
+        <button id="backToQuizBtn" type="button" class="w-full min-h-[50px] py-3 px-5 rounded-2xl bg-indigo-600 hover:bg-indigo-700 active:scale-[0.99] text-white font-bold text-sm shadow-md shadow-indigo-200 transition">
+          ← Kembali ke Latihan Soal
+        </button>
+        <button id="openResetModalBtn" type="button" class="w-full min-h-[48px] py-3 px-5 rounded-2xl bg-white border-2 border-rose-200 hover:bg-rose-50 active:scale-[0.99] text-rose-600 font-bold text-sm transition">
+          🔄 Reset Semua Progres
+        </button>
+      </div>
+    </section>
+
+    <!-- ==================== STICKY BOTTOM BAR (THUMB ZONE) ==================== -->
+    <footer id="stickyBottomBar" class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] z-30 bg-white/95 backdrop-blur-md border-t border-slate-200 px-3.5 py-2.5">
+      <div class="flex items-center gap-2">
+        <button id="prevBtn" type="button" class="min-h-[48px] px-3.5 rounded-2xl bg-slate-100 hover:bg-slate-200 active:scale-95 disabled:opacity-40 text-slate-700 font-bold text-xs flex items-center justify-center gap-1 shrink-0 transition">
+          <span>←</span>
+          <span>Prev</span>
+        </button>
+
+        <button id="checkBtn" type="button" class="flex-1 min-h-[48px] px-4 rounded-2xl bg-indigo-600 hover:bg-indigo-700 active:scale-[0.98] disabled:bg-slate-300 disabled:text-slate-500 text-white font-extrabold text-sm shadow-md shadow-indigo-200/80 transition flex items-center justify-center gap-1.5">
+          Periksa Jawaban
+        </button>
+
+        <button id="nextBtn" type="button" class="min-h-[48px] px-3.5 rounded-2xl bg-slate-100 hover:bg-slate-200 active:scale-95 disabled:opacity-40 text-slate-700 font-bold text-xs flex items-center justify-center gap-1 shrink-0 transition">
+          <span>Next</span>
+          <span>→</span>
+        </button>
+      </div>
+    </footer>
+
+    <!-- ==================== BOTTOM SHEET: DAFTAR SOAL (1–50) ==================== -->
+    <div id="drawerModal" class="hidden fixed inset-0 z-50 flex items-end justify-center bg-slate-900/50 backdrop-blur-xs">
+      <div class="w-full max-w-[480px] max-h-[82dvh] bg-white rounded-t-3xl flex flex-col shadow-2xl animate-fade-up">
+        <div class="w-10 h-1 bg-slate-300 rounded-full mx-auto mt-2.5"></div>
+
+        <div class="px-5 py-3.5 border-b border-slate-100 flex items-center justify-between">
+          <div>
+            <h3 class="font-extrabold text-base text-slate-900">Daftar Soal (1–50)</h3>
+            <p class="text-xs text-slate-500">Ketuk nomor untuk melompat ke soal</p>
+          </div>
+          <button id="closeDrawerBtn" type="button" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold flex items-center justify-center">
+            ✕
+          </button>
+        </div>
+
+        <!-- Legend -->
+        <div class="px-5 py-2.5 bg-slate-50 border-b border-slate-100 flex flex-wrap gap-x-3.5 gap-y-1.5 text-[11px] font-bold text-slate-600">
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-slate-200 inline-block"></span>Belum</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>Benar</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>Salah/Revisi</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full border-2 border-indigo-600 bg-white inline-block"></span>Aktif</span>
+        </div>
+
+        <!-- 5-Column Grid -->
+        <div id="drawerGrid" class="p-4 overflow-y-auto grid grid-cols-5 gap-2">
+          <!-- Injected via JS -->
+        </div>
+
+        <div class="p-4 border-t border-slate-100 flex gap-2">
+          <button id="drawerEvalBtn" type="button" class="flex-1 min-h-[48px] rounded-2xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-extrabold text-sm transition">
+            📊 Hasil &amp; Evaluasi
+          </button>
+          <button id="drawerResetBtn" type="button" class="min-h-[48px] px-4 rounded-2xl bg-rose-50 hover:bg-rose-100 text-rose-600 font-bold text-sm transition">
+            🔄 Reset
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== CUSTOM RESET CONFIRMATION MODAL ==================== -->
+    <div id="resetModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-5 bg-slate-900/50 backdrop-blur-xs">
+      <div class="w-full max-w-[350px] bg-white rounded-3xl p-6 shadow-2xl animate-fade-up">
+        <div class="w-12 h-12 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center text-2xl mx-auto mb-3">
+          🔄
+        </div>
+        <h3 class="text-lg font-extrabold text-slate-900 text-center">Reset Semua Progres?</h3>
+        <p class="text-xs text-slate-500 text-center mt-1.5 leading-relaxed">
+          Seluruh jawaban, status benar/salah, dan catatan percobaan untuk 50 soal akan dihapus agar kamu bisa mulai dari awal.
+        </p>
+        <div class="grid grid-cols-2 gap-2.5 mt-5">
+          <button id="cancelResetBtn" type="button" class="min-h-[48px] rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm transition">
+            Batal
+          </button>
+          <button id="confirmResetBtn" type="button" class="min-h-[48px] rounded-2xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-sm transition">
+            Ya, Reset
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ==================== VANILLA JS: 50 COMPLETE QUESTIONS & APP ENGINE ==================== -->
+  <script>
+    /**
+     * CHAPTER METADATA — English Speaking Class Book 1 (Chapter 21–25)
+     */
+    const CHAPTER_META = {
+      21: { short: "Ch. 21", title: "What Have You Done? (Present & Past Perfect)" },
+      22: { short: "Ch. 22", title: "English Review Challenge (Mixed Grammar & Speaking)" },
+      23: { short: "Ch. 23", title: "What If? (Conditionals Type 1, 2 & 3)" },
+      24: { short: "Ch. 24", title: "How Things Are Done (Passive Voice — 5 Forms)" },
+      25: { short: "Ch. 25", title: "How Often Do You...? (Frequency & Manner)" }
+    };
+
+    /**
+     * COMPLETE 50 QUESTIONS BANK (35 PG + 15 PGK)
+     * ZERO-SPOILER GUARANTEE:
+     * - `optionHints` only explains WHY a wrong option is wrong, never naming or quoting the correct option.
+     * - `ruleGuide` explains the grammar/context rule so the learner can figure out the right choice independently.
+     */
+    const QUESTIONS = [
+      // ==================== CHAPTER 21 (No. 1–10: 7 PG + 3 PGK) ====================
+      {
+        id: 1, chapter: 21, type: "pg",
+        question: "She ______ Japanese food at an international hotel restaurant.",
+        options: {
+          A: "have eaten",
+          B: "has ate",
+          C: "has eaten",
+          D: "is eaten"
+        },
+        correct: ["C"],
+        optionHints: {
+          A: "Subjek 'She' adalah orang ketiga tunggal, sehingga tidak boleh memakai kata bantu 'have'.",
+          B: "Bentuk kata kerja 'ate' adalah Verb 2 (Simple Past), padahal Present Perfect wajib memakai Verb 3 (Past Participle).",
+          D: "'is eaten' adalah bentuk kalimat pasif ('dimakan'), bukan kalimat aktif untuk menyatakan pengalaman makan."
+        },
+        ruleGuide: "Gunakan pola Present Perfect: Subject + have/has + Past Participle (V3). Cocokkan kata bantu untuk subjek tunggal 'She' dan pastikan memakai bentuk V3 dari 'eat'.",
+        successExplanation: "Benar! Subjek tunggal 'She' berpasangan dengan 'has' + Past Participle (V3) 'eaten'."
+      },
+      {
+        id: 2, chapter: 21, type: "pg",
+        question: "A: 'Have you ever stayed at a five-star hotel?' B: 'No, I ______.'",
+        options: {
+          A: "didn't",
+          B: "haven't",
+          C: "hasn't",
+          D: "don't"
+        },
+        correct: ["B"],
+        optionHints: {
+          A: "'didn't' digunakan untuk menjawab pertanyaan Simple Past ('Did you...?'), bukan 'Have you...?'.",
+          C: "'hasn't' hanya dipakai untuk subjek he/she/it, tidak cocok dengan subjek 'I'.",
+          D: "'don't' digunakan untuk pertanyaan Simple Present ('Do you...?'), bukan Present Perfect."
+        },
+        ruleGuide: "Short answer untuk pertanyaan Present Perfect ('Have you...?') harus mengulang kata bantu yang sesuai dengan subjek 'I' dalam bentuk negatif.",
+        successExplanation: "Tepat! Pertanyaan 'Have you ever...?' dijawab negatif singkat dengan 'No, I haven't.'"
+      },
+      {
+        id: 3, chapter: 21, type: "pg",
+        question: "Choose the grammatically CORRECT sentence using 'never' to talk about life experience.",
+        options: {
+          A: "I haven't never visited Australia.",
+          B: "I have never visit Australia.",
+          C: "I have never visited Australia.",
+          D: "I never has visited Australia."
+        },
+        correct: ["C"],
+        optionHints: {
+          A: "Kata 'never' sudah bermakna negatif; menggabungkannya dengan 'haven't' menciptakan double negative yang salah.",
+          B: "Setelah 'have never', kata kerjanya harus berbentuk Past Participle (V3), bukan kata kerja dasar ('visit').",
+          D: "Subjek 'I' tidak boleh memakai 'has', dan posisi 'never' seharusnya berada di antara 'have' dan V3."
+        },
+        ruleGuide: "Pola 'never' pada Present Perfect: Subject + have/has (positif, tanpa not) + never + V3.",
+        successExplanation: "Benar! 'I have never visited Australia.' tidak memakai double negative dan menggunakan V3 'visited'."
+      },
+      {
+        id: 4, chapter: 21, type: "pg",
+        question: "Supervisor: 'Have you finished setting the banquet tables ______?' Staff: 'No, I haven't finished them ______.'",
+        options: {
+          A: "already / already",
+          B: "yet / yet",
+          C: "just / ever",
+          D: "never / already"
+        },
+        correct: ["B"],
+        optionHints: {
+          A: "'already' umumnya dipakai di kalimat positif dan diletakkan sebelum V3, bukan di akhir kalimat negatif.",
+          C: "'just' berarti 'baru saja' (untuk kalimat positif) dan 'ever' dipakai dalam pertanyaan pengalaman, bukan di akhir kalimat negatif.",
+          D: "'never' dan 'already' tidak sesuai untuk posisi di akhir pertanyaan maupun kalimat negatif yang menanyakan apakah tugas sudah selesai."
+        },
+        ruleGuide: "Ingat fungsi kata keterangan waktu Chapter 21: satu kata khusus sering diletakkan di akhir kalimat tanya DAN kalimat negatif untuk menanyakan/menyatakan sesuatu yang 'sudah/belum' selesai.",
+        successExplanation: "Tepat sekali! 'yet' digunakan di akhir pertanyaan dan kalimat negatif ('Have you finished... yet?' / 'I haven't finished... yet.')."
+      },
+      {
+        id: 5, chapter: 21, type: "pg",
+        question: "Choose the sentence that follows the rule for Present Perfect vs Simple Past correctly.",
+        options: {
+          A: "I have visited Jakarta last year.",
+          B: "She has stayed at that hotel last month.",
+          C: "I ate sushi at a restaurant yesterday.",
+          D: "We have cooked for a large group two days ago."
+        },
+        correct: ["C"],
+        optionHints: {
+          A: "Ada penanda waktu lampau yang sudah selesai ('last year'), sehingga TIDAK boleh memakai Present Perfect ('have visited').",
+          B: "Ada waktu lampau spesifik ('last month'), jadi seharusnya memakai Simple Past, bukan Present Perfect ('has stayed').",
+          D: "Ada waktu spesifik yang sudah berlalu ('two days ago'), sehingga tidak cocok menggunakan Present Perfect ('have cooked')."
+        },
+        ruleGuide: "Aturan penting Chapter 21: Jika kalimat menyebutkan waktu lampau yang spesifik & sudah selesai (yesterday, last year, last month, two days ago), WAJIB gunakan Simple Past (V2), bukan Present Perfect.",
+        successExplanation: "Bagus! Karena ada keterangan waktu spesifik 'yesterday', penggunaan Simple Past ('ate') adalah yang paling tepat."
+      },
+      {
+        id: 6, chapter: 21, type: "pg",
+        question: "When the VIP guests arrived at the hotel, the housekeeping team ______ already ______ the suite.",
+        options: {
+          A: "has / cleaned",
+          B: "had / cleaned",
+          C: "had / clean",
+          D: "have / cleaned"
+        },
+        correct: ["B"],
+        optionHints: {
+          A: "'has cleaned' adalah Present Perfect, padahal kedua kejadian berlangsung di masa lalu ('arrived').",
+          C: "Setelah kata bantu 'had', kata kerja utama harus berbentuk Past Participle (V3), bukan bentuk dasar ('clean').",
+          D: "'have cleaned' adalah Present Perfect dan tidak dipakai untuk mengurutkan dua kejadian lampau."
+        },
+        ruleGuide: "Untuk menjelaskan kejadian yang terjadi LEBIH DULU sebelum kejadian lampau lainnya ('arrived'), gunakan Past Perfect: Subject + had + Past Participle (V3).",
+        successExplanation: "Tepat! Past Perfect ('had already cleaned') menunjukkan kamar sudah selesai dibersihkan sebelum tamu VIP tiba."
+      },
+      {
+        id: 7, chapter: 21, type: "pg",
+        question: "My classmate has ______ English with several foreign tourists this semester.",
+        options: {
+          A: "speak",
+          B: "spoke",
+          C: "spoken",
+          D: "speaking"
+        },
+        correct: ["C"],
+        optionHints: {
+          A: "'speak' adalah kata kerja dasar (V1), padahal setelah 'has' pada Present Perfect harus memakai V3.",
+          B: "'spoke' adalah bentuk Simple Past (V2), bukan Past Participle (V3).",
+          D: "'speaking' adalah bentuk verb-ing, bukan Past Participle untuk pola 'has + V3'."
+        },
+        ruleGuide: "Setelah 'have/has' dalam Present Perfect, wajib memakai Past Participle (Verb 3) dari kata kerja tak beraturan 'speak'.",
+        successExplanation: "Benar! Bentuk V3 (Past Participle) dari 'speak' adalah 'spoken'."
+      },
+      {
+        id: 8, chapter: 21, type: "pgk",
+        question: "Select ALL sentences that use Present Perfect Tense CORRECTLY.",
+        options: {
+          A: "We have stayed at that hotel twice.",
+          B: "She has just arrived at the kitchen.",
+          C: "I have eaten Korean food yesterday.",
+          D: "They haven't worked in a restaurant yet."
+        },
+        correct: ["A", "B", "D"],
+        wrongHints: {
+          C: "Kalimat ini menggabungkan Present Perfect ('have eaten') dengan waktu lampau spesifik ('yesterday'), yang melanggar aturan Chapter 21."
+        },
+        ruleGuide: "Pastikan setiap kalimat memakai 'have/has + V3' yang cocok dengan subjeknya DAN tidak mencantumkan waktu lampau yang sudah selesai seperti 'yesterday'.",
+        successExplanation: "Mantap! A, B, dan D semuanya menerapkan struktur dan fungsi Present Perfect dengan benar."
+      },
+      {
+        id: 9, chapter: 21, type: "pgk",
+        question: "Select ALL CORRECT Base Verb → Past Participle (V3) pairs.",
+        options: {
+          A: "eat → eaten",
+          B: "see → saw",
+          C: "take → taken",
+          D: "go → gone"
+        },
+        correct: ["A", "C", "D"],
+        wrongHints: {
+          B: "'saw' adalah bentuk Simple Past (V2) dari 'see', bukan bentuk Past Participle (V3)."
+        },
+        ruleGuide: "Hati-hati membedakan Verb 2 (Simple Past) dan Verb 3 (Past Participle). Pilih hanya pasangan yang kanan-nya benar-benar bentuk V3.",
+        successExplanation: "Benar! V3 dari eat adalah 'eaten', take adalah 'taken', dan go adalah 'gone' (sedangkan V3 dari see adalah 'seen')."
+      },
+      {
+        id: 10, chapter: 21, type: "pgk",
+        question: "Select ALL sentences that are grammatically CORRECT (Present Perfect or Past Perfect).",
+        options: {
+          A: "Have you ever cooked for a large group?",
+          B: "By the time the chef came, we had washed the vegetables.",
+          C: "I haven't never traveled abroad.",
+          D: "He has already finished his English homework."
+        },
+        correct: ["A", "B", "D"],
+        wrongHints: {
+          C: "'haven't never' adalah double negative yang salah; cukup gunakan 'have never'."
+        },
+        ruleGuide: "Periksa: pertanyaan 'Have you ever + V3?', Past Perfect 'had + V3' untuk aksi lebih awal, 'has already + V3', dan hindari double negative.",
+        successExplanation: "Tepat! A, B, dan D semuanya benar secara grammar dalam Present Perfect dan Past Perfect."
+      },
+
+      // ==================== CHAPTER 22 (No. 11–20: 7 PG + 3 PGK) ====================
+      {
+        id: 11, chapter: 22, type: "pg",
+        question: "Grammar Doctor! Fix the mistake in this sentence: 'He don't like cooking spicy food.'",
+        options: {
+          A: "He doesn't likes cooking spicy food.",
+          B: "He doesn't like cooking spicy food.",
+          C: "He isn't like cooking spicy food.",
+          D: "He don't likes cooking spicy food."
+        },
+        correct: ["B"],
+        optionHints: {
+          A: "Setelah 'doesn't', kata kerja utama tidak boleh diberi akhiran '-s' ('likes'), harus kembali ke bentuk dasar.",
+          C: "'isn't' tidak digunakan untuk menegasikan kata kerja aksi seperti 'like' dalam kalimat aktif Simple Present.",
+          D: "Subjek 'He' adalah orang ketiga tunggal sehingga tidak boleh memakai 'don't', dan tidak boleh ada '-s' pada kata kerja setelah do/does."
+        },
+        ruleGuide: "Untuk kalimat negatif Simple Present dengan subjek he/she/it, gunakan pola: 'doesn't + BASE VERB (V1 tanpa -s)'.",
+        successExplanation: "Benar! Subjek 'He' memakai 'doesn't' diikuti kata kerja dasar 'like'."
+      },
+      {
+        id: 12, chapter: 22, type: "pg",
+        question: "Grammar Doctor! Fix the mistake in this sentence: 'They was at school yesterday.'",
+        options: {
+          A: "They are at school yesterday.",
+          B: "They were at school yesterday.",
+          C: "They did at school yesterday.",
+          D: "They be at school yesterday."
+        },
+        correct: ["B"],
+        optionHints: {
+          A: "'are' adalah bentuk Present, padahal ada penanda waktu lampau 'yesterday'.",
+          C: "'did' adalah kata bantu untuk kata kerja aksi, tidak bisa menggantikan 'to be' di depan keterangan tempat ('at school').",
+          D: "'be' adalah bentuk dasar yang belum dikonjugasikan sesuai subjek dan tenses lampau."
+        },
+        ruleGuide: "Karena ada 'yesterday' (lampau) dan keterangan tempat ('at school'), gunakan bentuk lampau 'to be' khusus untuk subjek jamak ('They').",
+        successExplanation: "Tepat! Bentuk lampau 'to be' untuk subjek jamak 'They' adalah 'were'."
+      },
+      {
+        id: 13, chapter: 22, type: "pg",
+        question: "Grammar Speed Challenge! Look! The hospitality students ______ English with a foreign guest right now.",
+        options: {
+          A: "speak",
+          B: "is speaking",
+          C: "are speaking",
+          D: "spoke"
+        },
+        correct: ["C"],
+        optionHints: {
+          A: "'speak' adalah Simple Present (kebiasaan), padahal ada penanda waktu sedang berlangsung ('Look!' dan 'right now').",
+          B: "Subjek 'The hospitality students' berbentuk jamak (ada -s), sehingga tidak cocok dengan 'is'.",
+          D: "'spoke' adalah Simple Past (masa lalu), tidak cocok dengan 'right now'."
+        },
+        ruleGuide: "Penanda 'Look!' dan 'right now' menuntut Present Continuous (am/is/are + verb-ing). Sesuaikan 'be' dengan subjek jamak 'students'.",
+        successExplanation: "Benar! Subjek jamak 'The hospitality students' + 'right now' menggunakan 'are speaking'."
+      },
+      {
+        id: 14, chapter: 22, type: "pg",
+        question: "Next month, I ______ to join a culinary training program in Bali.",
+        options: {
+          A: "am go",
+          B: "will going",
+          C: "am going",
+          D: "going"
+        },
+        correct: ["C"],
+        optionHints: {
+          A: "Pola rencana masa depan membutuhkan 'going to', bukan 'am go to'.",
+          B: "Modal 'will' tidak boleh langsung diikuti 'going' tanpa 'be' dan tidak digabung menjadi 'will going to'.",
+          D: "Bentuk 'going to' tidak boleh berdiri sendiri tanpa kata bantu 'be' (am/is/are) di depannya."
+        },
+        ruleGuide: "Untuk rencana masa depan ('Next month'), gunakan pola: Subject + am/is/are + going to + V1.",
+        successExplanation: "Tepat! 'I am going to join...' adalah pola 'be going to' yang benar untuk rencana masa depan."
+      },
+      {
+        id: 15, chapter: 22, type: "pg",
+        question: "Question Maker! Answer: 'I went to Bukittinggi last weekend.' What is the best question for this answer?",
+        options: {
+          A: "Where did you went last weekend?",
+          B: "Where do you go last weekend?",
+          C: "Where did you go last weekend?",
+          D: "What did you go last weekend?"
+        },
+        correct: ["C"],
+        optionHints: {
+          A: "Setelah kata bantu 'did', kata kerja utama harus kembali ke bentuk dasar (V1), bukan 'went'.",
+          B: "'do' dipakai untuk kebiasaan sekarang, padahal jawabannya memakai Simple Past ('went ... last weekend').",
+          D: "Kata tanya 'What' menanyakan benda/aktivitas, sedangkan jawaban 'to Bukittinggi' adalah tempat."
+        },
+        ruleGuide: "Pilih kata tanya untuk TEMPAT + pola pertanyaan Simple Past: 'WH-word + did + subject + BASE VERB?'.",
+        successExplanation: "Bagus! 'Where did you go last weekend?' tepat menanyakan tempat dalam Simple Past."
+      },
+      {
+        id: 16, chapter: 22, type: "pg",
+        question: "Real-Life Situation (Hotel): A guest looks confused while reading a hotel map. What is the most polite offer of help?",
+        options: {
+          A: "What is your problem?",
+          B: "Would you like some help?",
+          C: "Can you help me?",
+          D: "Give me the map."
+        },
+        correct: ["B"],
+        optionHints: {
+          A: "'What is your problem?' terdengar kurang ramah dan terlalu langsung untuk tamu hotel.",
+          C: "Kalimat ini artinya kamu yang meminta bantuan kepada tamu, bukan menawarkan bantuan.",
+          D: "Kalimat perintah langsung seperti ini terlalu kasar dalam pelayanan hospitality."
+        },
+        ruleGuide: "Dalam situasi hospitality, tawarkan bantuan dengan sopan menggunakan pola 'Can I help you?' atau 'Would you like + noun?'.",
+        successExplanation: "Profesional! 'Would you like some help?' adalah cara yang ramah dan sopan menawarkan bantuan."
+      },
+      {
+        id: 17, chapter: 22, type: "pg",
+        question: "Real-Life Situation (Making Plans): Friend: 'What shall we do after class?' Choose the grammatically CORRECT suggestion.",
+        options: {
+          A: "Let's to practice English together.",
+          B: "Let's practicing English together.",
+          C: "Let's practice English together.",
+          D: "Shall we to practice English together?"
+        },
+        correct: ["C"],
+        optionHints: {
+          A: "Setelah 'Let's', JANGAN menambahkan kata 'to' sebelum kata kerjanya.",
+          B: "Setelah 'Let's', kata kerja tidak boleh memakai akhiran '-ing'.",
+          D: "Setelah 'Shall we', JANGAN menambahkan kata 'to' sebelum kata kerjanya."
+        },
+        ruleGuide: "Ingat rumus saran bersama: 'Let's + BASE VERB' atau 'Shall we + BASE VERB?' (tanpa 'to' dan tanpa '-ing').",
+        successExplanation: "Benar! 'Let's practice English together.' menggunakan base verb 'practice' secara langsung."
+      },
+      {
+        id: 18, chapter: 22, type: "pgk",
+        question: "Grammar Doctor! Select ALL sentences that contain a GRAMMAR MISTAKE.",
+        options: {
+          A: "She have two sisters.",
+          B: "Did you went to the hotel yesterday?",
+          C: "Rina studies English every Monday.",
+          D: "She has visited Bali last week."
+        },
+        correct: ["A", "B", "D"],
+        wrongHints: {
+          C: "Hati-hati baca perintah soal! Soal meminta kalimat yang SALAH secara grammar, sedangkan 'Rina studies English every Monday.' sudah benar."
+        },
+        ruleGuide: "Cari semua kalimat yang MELANGGAR aturan grammar (have/has untuk 'She', 'Did + V1', dan larangan waktu spesifik 'last week' pada Present Perfect).",
+        successExplanation: "Teliti sekali! A salah ('She has'), B salah ('Did you go'), dan D salah ('She visited Bali last week')."
+      },
+      {
+        id: 19, chapter: 22, type: "pgk",
+        question: "Question Maker! Select ALL grammatically CORRECT questions.",
+        options: {
+          A: "What time do you usually get up?",
+          B: "Have you ever stayed in a hotel?",
+          C: "Does she likes baking cakes?",
+          D: "Where are you going to work after graduation?"
+        },
+        correct: ["A", "B", "D"],
+        wrongHints: {
+          C: "Setelah kata bantu 'Does', kata kerja utama tidak boleh ditambah '-s' ('likes'), harus kembali ke bentuk dasar."
+        },
+        ruleGuide: "Cek struktur tiap tenses: 'do/does + S + V1', 'Have + S + ever + V3', dan 'be + S + going to + V1'.",
+        successExplanation: "Mantap! A, B, dan D semuanya adalah pertanyaan yang akurat secara grammar."
+      },
+      {
+        id: 20, chapter: 22, type: "pgk",
+        question: "Real-Life Review! Select ALL natural and grammatically CORRECT sentences for daily/workplace communication.",
+        options: {
+          A: "I think teamwork is important because we can help each other.",
+          B: "Could you help me carry this luggage, please?",
+          C: "I am agree with your opinion.",
+          D: "Shall we meet at the lobby at 9:00?"
+        },
+        correct: ["A", "B", "D"],
+        wrongHints: {
+          C: "'I am agree' adalah kesalahan grammar klasik — 'agree' adalah kata kerja langsung, jangan gunakan 'am'."
+        },
+        ruleGuide: "Periksa tiap ungkapan: opini + alasan ('I think... because...'), permintaan sopan ('Could you + V1'), saran ('Shall we + V1'), dan hindari 'am agree'.",
+        successExplanation: "Benar! A, B, dan D semuanya natural, sopan, dan tepat secara grammar."
+      },
+
+      // ==================== CHAPTER 23 (No. 21–30: 7 PG + 3 PGK) ====================
+      {
+        id: 21, chapter: 23, type: "pg",
+        question: "Conditional Type 1 (Real Possibility): If I ______ hard tonight, I will pass the English test.",
+        options: {
+          A: "will study",
+          B: "studied",
+          C: "study",
+          D: "had studied"
+        },
+        correct: ["C"],
+        optionHints: {
+          A: "Kesalahan umum! Di dalam klausa 'if' (if-clause), TIDAK boleh memakai 'will'.",
+          B: "'studied' adalah Simple Past (untuk Type 2 dengan 'would'), sedangkan klausa hasilnya memakai 'will pass' (Type 1).",
+          D: "'had studied' adalah Past Perfect (untuk Type 3 dengan 'would have + V3'), bukan Type 1."
+        },
+        ruleGuide: "Rumus Conditional Type 1 (kemungkinan nyata di masa depan): 'If + Simple Present, will + base verb'.",
+        successExplanation: "Benar! Karena hasilnya 'will pass' (Type 1), if-clause memakai Simple Present 'study'."
+      },
+      {
+        id: 22, chapter: 23, type: "pg",
+        question: "Conditional Type 2 (Dream / Hypothetical): If I ______ my own restaurant, I would serve traditional Indonesian food.",
+        options: {
+          A: "have",
+          B: "had",
+          C: "would have",
+          D: "had had"
+        },
+        correct: ["B"],
+        optionHints: {
+          A: "'have' adalah Simple Present (untuk Type 1 dengan 'will'), bukan untuk klausa hasil 'would serve' (Type 2).",
+          C: "Kesalahan umum! JANGAN meletakkan 'would' di dalam klausa 'if' (if-clause).",
+          D: "'had had' adalah Past Perfect (untuk Type 3 dengan 'would have + V3'), bukan Type 2."
+        },
+        ruleGuide: "Rumus Conditional Type 2 (situasi khayalan/impian): 'If + Simple Past (V2), would + base verb'.",
+        successExplanation: "Tepat! Type 2 menggunakan Simple Past 'had' di if-clause dan 'would serve' di klausa hasil."
+      },
+      {
+        id: 23, chapter: 23, type: "pg",
+        question: "Conditional Type 3 (Past Regret): If I had left earlier, I ______ on time for the job interview.",
+        options: {
+          A: "will arrive",
+          B: "would arrive",
+          C: "would have arrived",
+          D: "would arrived"
+        },
+        correct: ["C"],
+        optionHints: {
+          A: "'will arrive' adalah hasil untuk Type 1 (masa depan), padahal if-clause memakai 'had left' (penyesalan masa lalu).",
+          B: "'would arrive' adalah hasil untuk Type 2 (khayalan sekarang), bukan Type 3 (masa lalu).",
+          D: "Setelah 'would' tidak boleh langsung diikuti V2/V3 ('arrived') tanpa kata 'have' di antaranya."
+        },
+        ruleGuide: "Rumus Conditional Type 3 (penyesalan masa lalu): 'If + Past Perfect (had + V3), would have + Past Participle (V3)'.",
+        successExplanation: "Benar! 'If I had left earlier, I would have arrived on time.' memenuhi struktur Type 3."
+      },
+      {
+        id: 24, chapter: 23, type: "pg",
+        question: "Choose the grammatically CORRECT Conditional Type 2 sentence.",
+        options: {
+          A: "If I would live abroad, I would learn the local language.",
+          B: "If I will live abroad, I would learn the local language.",
+          C: "If I lived abroad, I would learn the local language.",
+          D: "If I live abroad, I would learn the local language."
+        },
+        correct: ["C"],
+        optionHints: {
+          A: "Jangan pernah memakai 'would' di dalam klausa 'if' (if-clause).",
+          B: "Jangan memakai 'will' di dalam if-clause, dan 'will' juga tidak cocok dengan Type 2.",
+          D: "'live' adalah Simple Present (Type 1), tidak serasi dengan 'would learn' (Type 2)."
+        },
+        ruleGuide: "Cek keserasian Type 2: if-clause memakai Simple Past (tanpa will/would), dan klausa utama memakai 'would + V1'.",
+        successExplanation: "Tepat! 'If I lived abroad, I would learn the local language.' benar untuk situasi khayalan (Type 2)."
+      },
+      {
+        id: 25, chapter: 23, type: "pg",
+        question: "Job Interview Role-Play: Interviewer: 'What would you do if a customer complained about their food?' Applicant: 'If a customer complained, I ______ carefully and apologize politely.'",
+        options: {
+          A: "will listen",
+          B: "would listen",
+          C: "would have listened",
+          D: "listened"
+        },
+        correct: ["B"],
+        optionHints: {
+          A: "'will listen' adalah pasangan Type 1, sedangkan if-clause memakai Simple Past ('complained' — Type 2).",
+          C: "'would have listened' adalah hasil Type 3 (masa lalu), padahal pertanyaannya situasi hipotetis ('What would you do...?').",
+          D: "Klausa hasil pada Conditional Type 2 membutuhkan modal 'would + V1', bukan Simple Past saja."
+        },
+        ruleGuide: "Karena if-clause memakai Simple Past ('complained') dan pertanyaannya 'What would you do...?', lengkapi klausa hasil dengan pola Type 2: 'would + base verb'.",
+        successExplanation: "Profesional dan tepat! 'If a customer complained, I would listen carefully...'"
+      },
+      {
+        id: 26, chapter: 23, type: "pg",
+        question: "Culinary Situation: If an important ingredient ______ missing, I would inform the chef immediately.",
+        options: {
+          A: "is",
+          B: "will be",
+          C: "were",
+          D: "had been"
+        },
+        correct: ["C"],
+        optionHints: {
+          A: "'is' adalah Simple Present (Type 1), tidak cocok dengan 'would inform' (Type 2).",
+          B: "'will be' tidak boleh digunakan di dalam if-clause.",
+          D: "'had been' adalah Past Perfect (Type 3), sedangkan klausa hasilnya adalah Type 2 ('would inform')."
+        },
+        ruleGuide: "Dalam Conditional Type 2, kata 'to be' di dalam if-clause secara standar menggunakan bentuk subjunctive lampau (seperti 'If I were you...').",
+        successExplanation: "Benar! 'If an important ingredient were missing, I would inform the chef...' sesuai pola Type 2 di Chapter 23."
+      },
+      {
+        id: 27, chapter: 23, type: "pg",
+        question: "Expressing Regret: I missed the important meeting yesterday because I didn't check my schedule. If I ______ my schedule, I wouldn't have missed it.",
+        options: {
+          A: "checked",
+          B: "check",
+          C: "had checked",
+          D: "would check"
+        },
+        correct: ["C"],
+        optionHints: {
+          A: "'checked' adalah Simple Past (Type 2), padahal klausa hasilnya memakai 'wouldn't have missed' (Type 3).",
+          B: "'check' adalah Simple Present (Type 1), tidak cocok untuk penyesalan masa lalu (Type 3).",
+          D: "Jangan memakai 'would' di dalam if-clause."
+        },
+        ruleGuide: "Lihat klausa hasilnya: 'wouldn't have missed' (Type 3). Maka if-clause-nya wajib memakai Past Perfect (had + V3).",
+        successExplanation: "Tepat! 'If I had checked my schedule, I wouldn't have missed it.' adalah Conditional Type 3 yang akurat."
+      },
+      {
+        id: 28, chapter: 23, type: "pgk",
+        question: "Select ALL grammatically CORRECT Conditional Sentences (Type 1, 2, or 3).",
+        options: {
+          A: "If it rains tomorrow, we will stay at home.",
+          B: "If I were you, I would practice English every day.",
+          C: "If I had known earlier, I would helped you.",
+          D: "If she had practiced more, she would have felt more confident."
+        },
+        correct: ["A", "B", "D"],
+        wrongHints: {
+          C: "'I would helped you' salah karena pada Type 3 kata 'have' hilang di antara 'would' dan V3 ('helped')."
+        },
+        ruleGuide: "Cocokkan tiap kalimat dengan 3 rumus: Type 1 (V1 → will V1), Type 2 (V2/were → would V1), Type 3 (had V3 → would have V3).",
+        successExplanation: "Mantap! A (Type 1), B (Type 2), dan D (Type 3) semuanya benar secara struktur."
+      },
+      {
+        id: 29, chapter: 23, type: "pgk",
+        question: "Select ALL sentences that contain a COMMON MISTAKE in Conditional Sentences.",
+        options: {
+          A: "If I will have time, I will study.",
+          B: "If I would be rich, I would open a hotel.",
+          C: "If we finish work early, we will go home.",
+          D: "If I had studied harder, I would passed the test."
+        },
+        correct: ["A", "B", "D"],
+        wrongHints: {
+          C: "Perhatikan soalnya: diminta memilih kalimat yang SALAH secara grammar, sedangkan 'If we finish work early, we will go home.' sudah benar (Type 1)."
+        },
+        ruleGuide: "Cari semua kalimat yang melanggar aturan: memakai 'will/would' di dalam if-clause, atau melupakan 'have' pada hasil Type 3.",
+        successExplanation: "Teliti! A salah ('If I will'), B salah ('If I would'), dan D salah ('would passed' tanpa 'have')."
+      },
+      {
+        id: 30, chapter: 23, type: "pgk",
+        question: "Select ALL sentences that express a PAST REGRET (something in the past that cannot be changed).",
+        options: {
+          A: "If I had left earlier, I would have arrived on time.",
+          B: "I should have practiced more before the speaking test.",
+          C: "If I get this hotel job, I will do my best.",
+          D: "I wish I had asked for help yesterday."
+        },
+        correct: ["A", "B", "D"],
+        wrongHints: {
+          C: "'If I get this hotel job, I will do my best.' adalah Conditional Type 1 (rencana/kemungkinan masa depan), bukan penyesalan masa lalu."
+        },
+        ruleGuide: "Cari ungkapan penyesalan masa lalu dari Chapter 23: Conditional Type 3 ('If I had..., I would have...'), 'I should have + V3', atau 'I wish I had + V3'.",
+        successExplanation: "Benar! Ketiga kalimat tersebut mengungkapkan penyesalan atas kejadian di masa lalu."
+      },
+
+      // ==================== CHAPTER 24 (No. 31–40: 7 PG + 3 PGK) ====================
+      {
+        id: 31, chapter: 24, type: "pg",
+        question: "Simple Present Passive (Hotel Routine): Every morning, all guest rooms ______ by the housekeeping team before 10 a.m.",
+        options: {
+          A: "cleaned",
+          B: "is cleaned",
+          C: "are cleaned",
+          D: "are clean"
+        },
+        correct: ["C"],
+        optionHints: {
+          A: "Kalimat pasif WAJIB memiliki kata bantu 'be' sebelum Past Participle (V3).",
+          B: "Subjek 'all guest rooms' berbentuk jamak (lebih dari satu), sehingga tidak boleh memakai 'is'.",
+          D: "'clean' adalah kata sifat/V1, sedangkan struktur Passive Voice mewajibkan kata kerja bentuk Past Participle (V3)."
+        },
+        ruleGuide: "Pola Simple Present Passive (untuk rutinitas 'Every morning'): Subject + am/is/are + Past Participle (V3). Perhatikan jumlah subjeknya (tunggal/jamak).",
+        successExplanation: "Benar! 'all guest rooms' adalah jamak dan 'Every morning' adalah rutinitas, jadi gunakan 'are cleaned'."
+      },
+      {
+        id: 32, chapter: 24, type: "pg",
+        question: "Simple Past Passive: Yesterday, Room 305 ______ by the housekeeping staff.",
+        options: {
+          A: "was clean",
+          B: "was cleaned",
+          C: "were cleaned",
+          D: "is cleaned"
+        },
+        correct: ["B"],
+        optionHints: {
+          A: "Dalam Passive Voice, kata kerja utama harus berbentuk Past Participle (V3), bukan V1 ('clean').",
+          C: "'Room 305' adalah satu kamar (tunggal), sehingga tidak cocok dengan 'were'.",
+          D: "'is cleaned' adalah Simple Present, padahal ada penanda waktu lampau 'Yesterday'."
+        },
+        ruleGuide: "Pola Simple Past Passive ('Yesterday'): Subject + was/were + V3. Sesuaikan was/were dengan subjek tunggal 'Room 305'.",
+        successExplanation: "Tepat! 'Room 305' tunggal dan kejadiannya kemarin ('Yesterday'), maka gunakan 'was cleaned'."
+      },
+      {
+        id: 33, chapter: 24, type: "pg",
+        question: "Present Continuous Passive (Happening Now): At the moment, the conference room ______ for tonight's VIP event.",
+        options: {
+          A: "is decorated",
+          B: "is decorating",
+          C: "is being decorated",
+          D: "is being decorate"
+        },
+        correct: ["C"],
+        optionHints: {
+          A: "'is decorated' adalah Simple Present Passive (rutinitas), bukan aksi yang sedang berlangsung 'At the moment'.",
+          B: "'is decorating' adalah kalimat AKTIF (berarti ruangan itu yang mendekorasi, bukan didekorasi).",
+          D: "Setelah 'is being', kata kerjanya wajib berbentuk Past Participle (V3), bukan V1 ('decorate')."
+        },
+        ruleGuide: "Pola Present Continuous Passive (sedang dikerjakan sekarang): Subject + am/is/are + being + V3.",
+        successExplanation: "Benar! 'is being decorated' berarti ruangan tersebut sedang didekorasi saat ini."
+      },
+      {
+        id: 34, chapter: 24, type: "pg",
+        question: "Simple Future Passive: Tomorrow morning, 100 welcome drinks ______ for the hotel guests.",
+        options: {
+          A: "will prepared",
+          B: "will be prepare",
+          C: "will be prepared",
+          D: "are prepared"
+        },
+        correct: ["C"],
+        optionHints: {
+          A: "Simple Future Passive wajib menyertakan kata 'be' di antara 'will' dan V3.",
+          B: "Setelah 'will be', kata kerja utamanya wajib berbentuk Past Participle (V3), bukan V1 ('prepare').",
+          D: "'are prepared' adalah Simple Present (rutinitas), sedangkan penanda waktunya adalah 'Tomorrow morning' (masa depan)."
+        },
+        ruleGuide: "Pola Simple Future Passive ('Tomorrow'): Subject + will be + Past Participle (V3).",
+        successExplanation: "Tepat! 'will be prepared' mengikuti rumus Simple Future Passive dengan benar."
+      },
+      {
+        id: 35, chapter: 24, type: "pg",
+        question: "Present Perfect Passive (Already Completed): All the tables ______ already ______ for the dinner service.",
+        options: {
+          A: "has / been arranged",
+          B: "have / arranged",
+          C: "have / been arranged",
+          D: "have / been arrange"
+        },
+        correct: ["C"],
+        optionHints: {
+          A: "Subjek 'All the tables' berbentuk jamak (ada -s), jadi tidak boleh memakai 'has'.",
+          B: "Kalimat ini kehilangan kata 'been' sehingga berubah menjadi kalimat aktif (seolah meja yang menata sendiri).",
+          D: "Setelah 'have been', kata kerjanya harus berbentuk Past Participle (V3), bukan V1 ('arrange')."
+        },
+        ruleGuide: "Pola Present Perfect Passive: Subject + has/have + been + Past Participle (V3). Pastikan has/have cocok dengan subjek jamak 'tables'.",
+        successExplanation: "Bagus! 'All the tables have already been arranged' menunjukkan semua meja sudah selesai ditata."
+      },
+      {
+        id: 36, chapter: 24, type: "pg",
+        question: "Active to Passive: 'The chef prepares the soup.' Choose the correct Passive Voice transformation.",
+        options: {
+          A: "The soup prepares by the chef.",
+          B: "The soup is prepare by the chef.",
+          C: "The soup is prepared by the chef.",
+          D: "The soup was prepared by the chef."
+        },
+        correct: ["C"],
+        optionHints: {
+          A: "Kalimat ini tidak memiliki kata bantu 'be' dan tidak memakai V3, sehingga masih terlihat seperti kalimat aktif yang salah.",
+          B: "Setelah 'is', kata kerjanya harus diubah menjadi Past Participle (V3), bukan V1 ('prepare').",
+          D: "Kalimat aktif aslinya memakai Simple Present ('prepares'), jadi tenses pasifnya jangan diubah ke Simple Past ('was')."
+        },
+        ruleGuide: "Saat mengubah Active ke Passive: jadikan objek ('the soup') sebagai subjek baru, pertahankan tenses-nya (Simple Present → is/are), lalu ubah verb ke V3.",
+        successExplanation: "Benar! 'The soup is prepared by the chef.' mempertahankan tenses Simple Present dalam bentuk pasif."
+      },
+      {
+        id: 37, chapter: 24, type: "pg",
+        question: "Culinary Process: Choose the grammatically CORRECT step explaining how a salad is prepared.",
+        options: {
+          A: "First, the vegetables is washed and cut.",
+          B: "First, the vegetables are wash and cut.",
+          C: "First, the vegetables are washed and cut.",
+          D: "First, the vegetables washing and cutting."
+        },
+        correct: ["C"],
+        optionHints: {
+          A: "'the vegetables' adalah subjek jamak, sehingga tidak cocok memakai 'is'.",
+          B: "Dalam Passive Voice, kata kerja setelah 'are' harus berbentuk V3 ('washed'), bukan V1 ('wash').",
+          D: "Bentuk verb-ing tanpa 'be' bukan kalimat pasif untuk menjelaskan prosedur tetap."
+        },
+        ruleGuide: "Untuk menjelaskan prosedur dapur (Simple Present Passive), gunakan: Subject jamak + are + Past Participle (V3).",
+        successExplanation: "Tepat! 'First, the vegetables are washed and cut.' (V3 dari cut tetap 'cut')."
+      },
+      {
+        id: 38, chapter: 24, type: "pgk",
+        question: "Select ALL sentences written in PASSIVE VOICE (focusing on what is done, NOT active).",
+        options: {
+          A: "The towels are changed every morning.",
+          B: "The manager checks the report every evening.",
+          C: "The reservation has been confirmed.",
+          D: "The food is being plated in the kitchen now."
+        },
+        correct: ["A", "C", "D"],
+        wrongHints: {
+          B: "'The manager checks the report...' adalah kalimat AKTIF karena fokusnya pada pelaku ('The manager') yang melakukan aksi, bukan bentuk 'be + V3'."
+        },
+        ruleGuide: "Ciri utama Passive Voice: fokus pada benda/proses yang menerima aksi, dan SELALU memakai pola 'be (am/is/are/was/were/be/been/being) + V3'.",
+        successExplanation: "Mantap! A (Simple Present Passive), C (Present Perfect Passive), dan D (Present Continuous Passive) semuanya kalimat pasif."
+      },
+      {
+        id: 39, chapter: 24, type: "pgk",
+        question: "Select ALL sentences that contain a COMMON MISTAKE in Passive Voice.",
+        options: {
+          A: "The room cleaned every day.",
+          B: "The food is prepare by the chef.",
+          C: "The dishes were washed after dinner.",
+          D: "The report will checked tomorrow."
+        },
+        correct: ["A", "B", "D"],
+        wrongHints: {
+          C: "Hati-hati membaca soal! Diminta memilih kalimat yang SALAH, sedangkan 'The dishes were washed after dinner.' sudah benar (Simple Past Passive)."
+        },
+        ruleGuide: "Cari semua kalimat pasif yang kehilangan 'be' ('is/are/will be') atau lupa mengubah kata kerjanya menjadi V3 (Past Participle).",
+        successExplanation: "Teliti! A lupa 'is', B lupa V3 ('prepared'), dan D lupa 'be' ('will be checked')."
+      },
+      {
+        id: 40, chapter: 24, type: "pgk",
+        question: "Select ALL Passive Voice sentences where the TENSE matches the time clue correctly.",
+        options: {
+          A: "Right now, guest complaints are being handled by the manager.",
+          B: "Last night, several towels were sent to the laundry room.",
+          C: "Next week, the restaurant was renovated for three days.",
+          D: "Every evening, the hotel lobby is checked by the cleaning staff."
+        },
+        correct: ["A", "B", "D"],
+        wrongHints: {
+          C: "Keterangan waktunya adalah 'Next week' (masa depan), tetapi tenses pasifnya memakai Simple Past ('was renovated') — tidak cocok!"
+        },
+        ruleGuide: "Cocokkan petunjuk waktu dengan 5 bentuk pasif: Right now → is/are being + V3; Last night → was/were + V3; Next week → will be + V3; Every evening → is/are + V3.",
+        successExplanation: "Sempurna! A, B, dan D semuanya cocok antara penanda waktu dan tenses Passive Voice-nya."
+      },
+
+      // ==================== CHAPTER 25 (No. 41–50: 7 PG + 3 PGK) ====================
+      {
+        id: 41, chapter: 25, type: "pg",
+        question: "Adverb of Frequency Word Order: Choose the sentence with the CORRECT word order.",
+        options: {
+          A: "She wakes up usually early.",
+          B: "Usually she wake up early.",
+          C: "She usually wakes up early.",
+          D: "She is usually wakes up early."
+        },
+        correct: ["C"],
+        optionHints: {
+          A: "Adverb of frequency ('usually') seharusnya diletakkan SEBELUM kata kerja utama, bukan setelahnya.",
+          B: "Subjek 'she' membutuhkan akhiran '-s' pada kata kerja Simple Present ('wakes up').",
+          D: "Jangan menambahkan 'is' di depan kata kerja Simple Present ('wakes up')."
+        },
+        ruleGuide: "Aturan posisi Adverb of Frequency (always, usually, often, sometimes, rarely, never): letakkan SEBELUM kata kerja utama (Subject + adverb + verb+s/es).",
+        successExplanation: "Benar! 'She usually wakes up early.' menempatkan 'usually' tepat sebelum kata kerja utama 'wakes up'."
+      },
+      {
+        id: 42, chapter: 25, type: "pg",
+        question: "Adverb of Frequency with 'to be': Choose the sentence with the CORRECT word order.",
+        options: {
+          A: "He never is late for work.",
+          B: "He is never late for work.",
+          C: "He is late never for work.",
+          D: "He doesn't never late for work."
+        },
+        correct: ["B"],
+        optionHints: {
+          A: "Khusus untuk kalimat yang memakai 'to be' (am/is/are), adverb of frequency TIDAK diletakkan sebelum 'be'.",
+          C: "'never' tidak diletakkan di belakang kata sifat ('late').",
+          D: "Ada dua kesalahan: 'doesn't' tidak dipakai dengan kata sifat ('late'), dan 'doesn't never' adalah double negative."
+        },
+        ruleGuide: "Ingat pengecualian penting Chapter 25: Jika kalimat menggunakan 'to be' (am/is/are), letakkan Adverb of Frequency SETELAH 'to be'.",
+        successExplanation: "Tepat! Dengan 'to be', posisi yang benar adalah 'He is never late for work.'"
+      },
+      {
+        id: 43, chapter: 25, type: "pg",
+        question: "Supervisor: '______ do you clean your kitchen workstation?' Staff: 'I clean it every day after work.'",
+        options: {
+          A: "How many",
+          B: "How often",
+          C: "How much",
+          D: "How long"
+        },
+        correct: ["B"],
+        optionHints: {
+          A: "'How many' menanyakan jumlah benda yang bisa dihitung, bukan frekuensi kebiasaan.",
+          C: "'How much' menanyakan jumlah benda tak terhitung atau harga, bukan seberapa sering.",
+          D: "'How long' menanyakan durasi/lama waktu, sedangkan jawabannya 'every day' (frekuensi)."
+        },
+        ruleGuide: "Untuk menanyakan seberapa sering suatu rutinitas/kebiasaan dilakukan (dijawab 'every day', 'twice a week', 'always'), gunakan frasa tanya khusus frekuensi.",
+        successExplanation: "Benar! 'How often do you...?' digunakan untuk menanyakan frekuensi suatu aktivitas."
+      },
+      {
+        id: 44, chapter: 25, type: "pg",
+        question: "Adverb of Manner (Front Office): The receptionist always welcomes international guests ______.",
+        options: {
+          A: "polite",
+          B: "politely",
+          C: "politeness",
+          D: "more polite"
+        },
+        correct: ["B"],
+        optionHints: {
+          A: "'polite' adalah kata sifat (adjective) untuk menerangkan orang/benda, bukan menerangkan BAGAIMANA aksi 'welcomes' dilakukan.",
+          C: "'politeness' adalah kata benda (noun), tidak cocok diletakkan di akhir kalimat untuk menjelaskan cara kerja kata kerja.",
+          D: "'more polite' adalah bentuk kata sifat perbandingan (comparative adjective), bukan adverb of manner."
+        },
+        ruleGuide: "Untuk menjelaskan BAGAIMANA suatu kata kerja ('welcomes') dilakukan, ubah kata sifat ('polite') menjadi Adverb of Manner (biasanya ditambah '-ly').",
+        successExplanation: "Tepat! 'politely' adalah Adverb of Manner yang menjelaskan bagaimana resepsionis menyambut tamu."
+      },
+      {
+        id: 45, chapter: 25, type: "pg",
+        question: "Adverb of Manner (Kitchen): In a busy kitchen, cooks must cut the vegetables ______ to stay safe.",
+        options: {
+          A: "careful",
+          B: "carefully",
+          C: "care",
+          D: "caring"
+        },
+        correct: ["B"],
+        optionHints: {
+          A: "'careful' adalah kata sifat (adjective), padahal kita butuh kata keterangan cara (adverb) untuk kata kerja 'cut'.",
+          C: "'care' adalah kata kerja/benda, bukan adverb of manner.",
+          D: "'caring' adalah kata sifat ('penuh perhatian'), bukan cara memotong sayuran."
+        },
+        ruleGuide: "Cari bentuk Adverb of Manner (berakhiran '-ly') yang menjawab pertanyaan 'How do cooks cut the vegetables?'.",
+        successExplanation: "Benar! 'carefully' menjelaskan bagaimana cara koki memotong sayuran dengan aman."
+      },
+      {
+        id: 46, chapter: 25, type: "pg",
+        question: "Irregular Adverb of Manner: Rina practices speaking every evening, so she speaks English very ______.",
+        options: {
+          A: "good",
+          B: "goodly",
+          C: "well",
+          D: "betterly"
+        },
+        correct: ["C"],
+        optionHints: {
+          A: "'good' adalah kata sifat (adjective), sedangkan kita butuh adverb of manner untuk menjelaskan kata kerja 'speaks'.",
+          B: "Tidak ada kata 'goodly' sebagai bentuk adverb dari 'good' dalam bahasa Inggris standar.",
+          D: "Tidak ada kata 'betterly' dalam bahasa Inggris."
+        },
+        ruleGuide: "Ingat Adverb of Manner tak beraturan (irregular): kata sifat 'good' tidak ditambah '-ly', melainkan berubah menjadi bentuk adverb khusus.",
+        successExplanation: "Tepat! Bentuk Adverb of Manner dari 'good' adalah 'well' ('she speaks English very well')."
+      },
+      {
+        id: 47, chapter: 25, type: "pg",
+        question: "Simple Present Negative + Frequency: He ______ often cook at home because he works late at the restaurant.",
+        options: {
+          A: "don't",
+          B: "doesn't",
+          C: "isn't",
+          D: "aren't"
+        },
+        correct: ["B"],
+        optionHints: {
+          A: "Subjek 'He' adalah orang ketiga tunggal, sehingga tidak boleh menggunakan 'don't'.",
+          C: "'isn't' tidak digunakan untuk menegasikan kata kerja aksi ('cook') dalam Simple Present aktif.",
+          D: "'aren't' untuk subjek jamak dan juga tidak dipakai bersama kata kerja aksi V1 ('cook')."
+        },
+        ruleGuide: "Untuk kalimat negatif Simple Present dengan kata kerja aksi ('cook') dan subjek tunggal 'He', gunakan kata bantu negatif yang sesuai untuk he/she/it.",
+        successExplanation: "Benar! 'He doesn't often cook at home...' menggunakan 'doesn't' untuk subjek tunggal 'He'."
+      },
+      {
+        id: 48, chapter: 25, type: "pgk",
+        question: "Select ALL sentences that use Adverbs of Frequency and Simple Present CORRECTLY.",
+        options: {
+          A: "I always check guest orders carefully.",
+          B: "I usually am study English at night.",
+          C: "They are often tired after a busy shift.",
+          D: "She rarely skips breakfast."
+        },
+        correct: ["A", "C", "D"],
+        wrongHints: {
+          B: "'I usually am study' salah karena tidak boleh mencampur 'am' di depan kata kerja Simple Present 'study'."
+        },
+        ruleGuide: "Cek posisi adverb of frequency (sebelum verb utama, setelah 'to be') dan pastikan tidak ada 'am/is/are' sebelum verb 1 aktif.",
+        successExplanation: "Mantap! A (sebelum verb), C (setelah 'are'), dan D (sebelum verb + s) semuanya benar."
+      },
+      {
+        id: 49, chapter: 25, type: "pgk",
+        question: "Select ALL sentences that use Adverbs of Manner CORRECTLY.",
+        options: {
+          A: "The waiters work quickly during dinner service.",
+          B: "I always speak polite to hotel guests.",
+          C: "He works very hard to achieve his career goal.",
+          D: "The housekeeper cleans the room neatly and quietly."
+        },
+        correct: ["A", "C", "D"],
+        wrongHints: {
+          B: "'speak polite' salah karena 'polite' adalah kata sifat (adjective), seharusnya menggunakan bentuk adverb of manner ('politely')."
+        },
+        ruleGuide: "Perhatikan bagaimana aksi dilakukan: kebanyakan adverb berakhiran '-ly' (quickly, neatly, quietly, politely), dan beberapa bentuk tak beraturan tetap seperti 'hard' dan 'fast'.",
+        successExplanation: "Benar! 'quickly', 'hard' (irregular adverb), serta 'neatly and quietly' semuanya dipakai dengan tepat."
+      },
+      {
+        id: 50, chapter: 25, type: "pgk",
+        question: "Select ALL sentences that contain a COMMON MISTAKE according to Chapter 25.",
+        options: {
+          A: "I always am late for class.",
+          B: "She often cook dinner for her family.",
+          C: "Does she study English every day?",
+          D: "He doesn't studies on Sunday."
+        },
+        correct: ["A", "B", "D"],
+        wrongHints: {
+          C: "Hati-hati baca soalnya! Diminta memilih kalimat yang SALAH secara grammar, sedangkan 'Does she study English every day?' sudah benar."
+        },
+        ruleGuide: "Cari kalimat yang melanggar aturan Chapter 25: posisi adverb sebelum 'be', lupa '-s' pada subjek 'She', atau menambahkan '-s/-es' setelah 'doesn't'.",
+        successExplanation: "Teliti sekali! A salah ('I am always'), B salah ('She often cooks'), dan D salah ('He doesn't study')."
+      }
+    ];
+
+    // ==================== STATE & LOCALSTORAGE ====================
+    const STORAGE_KEY = "esc_book1_ch21_25_quiz_v1";
+
+    /**
+     * progress[id] = {
+     *   status: 'unanswered' | 'first_try' | 'corrected' | 'wrong_pending',
+     *   attempts: number,
+     *   lastSelected: string[]
+     * }
+     */
+    const state = {
+      filter: "all",          // 'all' | 'ch21'..'ch25' | 'pg' | 'pgk' | 'wrong'
+      activeIds: [],          // filtered question IDs
+      currentIndex: 0,        // index in activeIds
+      selection: [],          // temporary selected letters ['A'] or ['A','C']
+      progress: {},           // persisted question statuses
+      lastQuestionId: 1,      // persisted last viewed question ID
+      view: "quiz"            // 'quiz' | 'eval'
+    };
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === "object") {
+            state.progress = parsed.progress || {};
+            state.lastQuestionId = parsed.lastQuestionId || 1;
+            state.filter = parsed.filter || "all";
+          }
+        }
+      } catch (e) {
+        console.warn("Gagal memuat localStorage:", e);
+      }
+    }
+
+    function saveState() {
+      try {
+        const currentQ = getCurrentQuestion();
+        if (currentQ) state.lastQuestionId = currentQ.id;
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          progress: state.progress,
+          lastQuestionId: state.lastQuestionId,
+          filter: state.filter
+        }));
+      } catch (e) {
+        console.warn("Gagal menyimpan localStorage:", e);
+      }
+    }
+
+    function getProg(id) {
+      return state.progress[id] || { status: "unanswered", attempts: 0, lastSelected: [] };
+    }
+
+    function isSolved(status) {
+      return status === "first_try" || status === "corrected";
+    }
+
+    // ==================== DOM REFERENCES ====================
+    const headerProgressBadge = document.getElementById("headerProgressBadge");
+    const headerCounterText = document.getElementById("headerCounterText");
+    const globalProgressBar = document.getElementById("globalProgressBar");
+    const wrongModeBanner = document.getElementById("wrongModeBanner");
+    const exitWrongModeBtn = document.getElementById("exitWrongModeBtn");
+    const openEvalBtn = document.getElementById("openEvalBtn");
+    const openDrawerBtn = document.getElementById("openDrawerBtn");
+
+    const quizView = document.getElementById("quizView");
+    const evalView = document.getElementById("evalView");
+    const stickyBottomBar = document.getElementById("stickyBottomBar");
+
+    const questionCard = document.getElementById("questionCard");
+    const qChapterBadge = document.getElementById("qChapterBadge");
+    const qTypeBadge = document.getElementById("qTypeBadge");
+    const qMetaBadge = document.getElementById("qMetaBadge");
+    const qTopicLabel = document.getElementById("qTopicLabel");
+    const questionText = document.getElementById("questionText");
+    const pgkCallout = document.getElementById("pgkCallout");
+    const optionsContainer = document.getElementById("optionsContainer");
+    const feedbackCard = document.getElementById("feedbackCard");
+
+    const prevBtn = document.getElementById("prevBtn");
+    const checkBtn = document.getElementById("checkBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    // Drawer
+    const drawerModal = document.getElementById("drawerModal");
+    const closeDrawerBtn = document.getElementById("closeDrawerBtn");
+    const drawerGrid = document.getElementById("drawerGrid");
+    const drawerEvalBtn = document.getElementById("drawerEvalBtn");
+    const drawerResetBtn = document.getElementById("drawerResetBtn");
+
+    // Eval
+    const evalEmoji = document.getElementById("evalEmoji");
+    const evalSub = document.getElementById("evalSub");
+    const evalTotalPct = document.getElementById("evalTotalPct");
+    const evalTotalCount = document.getElementById("evalTotalCount");
+    const evalFirstTryPct = document.getElementById("evalFirstTryPct");
+    const statSolved = document.getElementById("statSolved");
+    const statWrong = document.getElementById("statWrong");
+    const statUnanswered = document.getElementById("statUnanswered");
+    const evalPgScore = document.getElementById("evalPgScore");
+    const evalPgSub = document.getElementById("evalPgSub");
+    const evalPgkScore = document.getElementById("evalPgkScore");
+    const evalPgkSub = document.getElementById("evalPgkSub");
+    const evalChapterList = document.getElementById("evalChapterList");
+    const retryWrongBtn = document.getElementById("retryWrongBtn");
+    const backToQuizBtn = document.getElementById("backToQuizBtn");
+    const openResetModalBtn = document.getElementById("openResetModalBtn");
+
+    // Reset Modal
+    const resetModal = document.getElementById("resetModal");
+    const cancelResetBtn = document.getElementById("cancelResetBtn");
+    const confirmResetBtn = document.getElementById("confirmResetBtn");
+
+    // ==================== FILTER & NAVIGATION LOGIC ====================
+    function getFilteredList(filterKey) {
+      if (filterKey === "all") return QUESTIONS;
+      if (filterKey === "ch21") return QUESTIONS.filter(q => q.chapter === 21);
+      if (filterKey === "ch22") return QUESTIONS.filter(q => q.chapter === 22);
+      if (filterKey === "ch23") return QUESTIONS.filter(q => q.chapter === 23);
+      if (filterKey === "ch24") return QUESTIONS.filter(q => q.chapter === 24);
+      if (filterKey === "ch25") return QUESTIONS.filter(q => q.chapter === 25);
+      if (filterKey === "pg") return QUESTIONS.filter(q => q.type === "pg");
+      if (filterKey === "pgk") return QUESTIONS.filter(q => q.type === "pgk");
+      if (filterKey === "wrong") {
+        return QUESTIONS.filter(q => getProg(q.id).status === "wrong_pending");
+      }
+      return QUESTIONS;
+    }
+
+    function updateFilterChipUI() {
+      document.querySelectorAll(".filter-chip").forEach(btn => {
+        if (btn.dataset.filter === state.filter) {
+          btn.className = "filter-chip shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-indigo-600 text-white shadow-xs transition active:scale-95";
+        } else {
+          btn.className = "filter-chip shrink-0 px-3 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-600 transition active:scale-95";
+        }
+      });
+
+      if (state.filter === "wrong") {
+        wrongModeBanner.classList.remove("hidden");
+      } else {
+        wrongModeBanner.classList.add("hidden");
+      }
+    }
+
+    function applyFilter(filterKey, preferredQuestionId = null) {
+      let list = getFilteredList(filterKey);
+      if (list.length === 0) {
+        // Fallback to all if e.g. wrong list is empty
+        filterKey = "all";
+        list = QUESTIONS;
+      }
+
+      state.filter = filterKey;
+      state.activeIds = list.map(q => q.id);
+      updateFilterChipUI();
+
+      if (preferredQuestionId && state.activeIds.includes(preferredQuestionId)) {
+        state.currentIndex = state.activeIds.indexOf(preferredQuestionId);
+      } else {
+        const firstUnfinished = state.activeIds.findIndex(id => !isSolved(getProg(id).status));
+        state.currentIndex = firstUnfinished >= 0 ? firstUnfinished : 0;
+      }
+
+      saveState();
+      if (state.view === "quiz") {
+        renderCurrentQuestion();
+      }
+    }
+
+    function setView(viewName) {
+      state.view = viewName;
+      if (viewName === "quiz") {
+        evalView.classList.add("hidden");
+        quizView.classList.remove("hidden");
+        stickyBottomBar.classList.remove("hidden");
+        renderCurrentQuestion();
+      } else {
+        quizView.classList.add("hidden");
+        stickyBottomBar.classList.add("hidden");
+        evalView.classList.remove("hidden");
+        renderEvaluation();
+      }
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }
+
+    // Filter chip listeners
+    document.querySelectorAll(".filter-chip").forEach(btn => {
+      btn.addEventListener("click", () => {
+        if (state.view === "eval") state.view = "quiz";
+        applyFilter(btn.dataset.filter, null);
+        setView("quiz");
+      });
+    });
+
+    exitWrongModeBtn.addEventListener("click", () => {
+      applyFilter("all", null);
+      setView("quiz");
+    });
+
+    // ==================== HEADER STATS ====================
+    function updateHeaderStats() {
+      const solvedTotal = QUESTIONS.filter(q => isSolved(getProg(q.id).status)).length;
+      const pct = Math.round((solvedTotal / QUESTIONS.length) * 100);
+      headerProgressBadge.textContent = `${solvedTotal}/50 Benar`;
+      globalProgressBar.style.width = `${pct}%`;
+
+      if (state.activeIds.length > 0) {
+        headerCounterText.textContent = `Soal ${state.currentIndex + 1} / ${state.activeIds.length}`;
+      } else {
+        headerCounterText.textContent = "0 / 0";
+      }
+    }
+
+    // ==================== QUESTION & OPTIONS RENDERING ====================
+    function getCurrentQuestion() {
+      const id = state.activeIds[state.currentIndex];
+      return QUESTIONS.find(q => q.id === id);
+    }
+
+    function renderCurrentQuestion() {
+      updateHeaderStats();
+      const q = getCurrentQuestion();
+      if (!q) return;
+
+      const prog = getProg(q.id);
+      const solved = isSolved(prog.status);
+
+      // Restore solved answer or previous wrong selection (so user can easily tweak it on PGK/PG)
+      if (solved) {
+        state.selection = [...q.correct];
+      } else if (prog.status === "wrong_pending" && prog.lastSelected.length > 0) {
+        state.selection = [...prog.lastSelected];
+      } else {
+        state.selection = [];
+      }
+
+      const meta = CHAPTER_META[q.chapter];
+      qChapterBadge.textContent = meta.short;
+      qTopicLabel.textContent = meta.title;
+      qMetaBadge.textContent = `No. ${q.id}` + (prog.attempts > 0 ? ` • ${prog.attempts}x cek` : "");
+      questionText.textContent = q.question;
+
+      if (q.type === "pg") {
+        qTypeBadge.textContent = "Pilihan Ganda";
+        qTypeBadge.className = "px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-slate-100 text-slate-700";
+        pgkCallout.classList.add("hidden");
+      } else {
+        qTypeBadge.textContent = "Pilihan Ganda Kompleks — Pilih lebih dari 1";
+        qTypeBadge.className = "px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-violet-100 text-violet-800";
+        pgkCallout.classList.remove("hidden");
+      }
+
+      // Subtle card animation
+      questionCard.classList.remove("animate-fade-up");
+      void questionCard.offsetWidth;
+      questionCard.classList.add("animate-fade-up");
+
+      renderOptions(q, solved);
+
+      if (solved) {
+        renderCorrectFeedback(q, prog);
+      } else if (prog.status === "wrong_pending" && prog.lastSelected.length > 0) {
+        renderAutoCorrectionFeedback(q, prog.lastSelected);
+      } else {
+        feedbackCard.classList.add("hidden");
+        feedbackCard.innerHTML = "";
+      }
+
+      updateBottomBar(solved, prog);
+      saveState();
+      quizView.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function renderOptions(q, solved) {
+      optionsContainer.innerHTML = "";
+      ["A", "B", "C", "D"].forEach(letter => {
+        const isSelected = state.selection.includes(letter);
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.disabled = solved;
+
+        let cardCls = "w-full min-h-[58px] text-left p-3.5 rounded-2xl border-2 transition-all flex items-center gap-3 ";
+        let badgeCls = "w-8 h-8 rounded-xl flex items-center justify-center font-extrabold text-sm shrink-0 transition-all ";
+        let indicator = "";
+
+        if (solved && isSelected) {
+          cardCls += "border-emerald-500 bg-emerald-50 text-emerald-950 shadow-xs";
+          badgeCls += "bg-emerald-600 text-white";
+          indicator = `<span class="ml-auto text-emerald-600 font-extrabold text-lg shrink-0">✓</span>`;
+        } else if (solved && !isSelected) {
+          cardCls += "border-slate-200/70 bg-white/60 text-slate-400 opacity-70";
+          badgeCls += "bg-slate-100 text-slate-400";
+        } else if (isSelected) {
+          if (q.type === "pgk") {
+            cardCls += "border-violet-600 bg-violet-50/90 text-violet-950 shadow-xs active:scale-[0.99]";
+            badgeCls += "bg-violet-600 text-white";
+            indicator = `<span class="ml-auto w-5 h-5 rounded-md bg-violet-600 text-white flex items-center justify-center text-xs font-bold shrink-0">✓</span>`;
+          } else {
+            cardCls += "border-indigo-600 bg-indigo-50/90 text-indigo-950 shadow-xs active:scale-[0.99]";
+            badgeCls += "bg-indigo-600 text-white";
+            indicator = `<span class="ml-auto w-5 h-5 rounded-full border-[5px] border-indigo-600 bg-white shrink-0"></span>`;
+          }
+        } else {
+          cardCls += "border-slate-200 bg-white hover:border-slate-300 text-slate-800 active:scale-[0.99]";
+          badgeCls += "bg-slate-100 text-slate-600";
+          indicator = q.type === "pgk"
+            ? `<span class="ml-auto w-5 h-5 rounded-md border-2 border-slate-300 bg-white shrink-0"></span>`
+            : `<span class="ml-auto w-5 h-5 rounded-full border-2 border-slate-300 bg-white shrink-0"></span>`;
+        }
+
+        btn.className = cardCls;
+        btn.innerHTML = `
+          <span class="${badgeCls}">${letter}</span>
+          <span class="text-[15.5px] font-medium leading-snug flex-1">${q.options[letter]}</span>
+          ${indicator}
+        `;
+
+        if (!solved) {
+          btn.addEventListener("click", () => toggleOption(q, letter));
+        }
+
+        optionsContainer.appendChild(btn);
+      });
+    }
+
+    function toggleOption(q, letter) {
+      if (q.type === "pg") {
+        state.selection = [letter];
+      } else {
+        if (state.selection.includes(letter)) {
+          state.selection = state.selection.filter(l => l !== letter);
+        } else {
+          state.selection = [...state.selection, letter].sort();
+        }
+      }
+      renderOptions(q, false);
+      updateBottomBar(false, getProg(q.id));
+    }
+
+    function updateBottomBar(solved, prog) {
+      prevBtn.disabled = state.currentIndex === 0;
+      const isLast = state.currentIndex === state.activeIds.length - 1;
+      nextBtn.disabled = false;
+
+      if (solved) {
+        checkBtn.disabled = false;
+        checkBtn.className = "flex-1 min-h-[48px] px-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 active:scale-[0.98] text-white font-extrabold text-sm shadow-md shadow-emerald-200/80 transition flex items-center justify-center gap-1.5";
+        checkBtn.innerHTML = isLast ? "Lihat Hasil &amp; Evaluasi 🏆" : "Soal Berikutnya →";
+      } else {
+        checkBtn.disabled = state.selection.length === 0;
+        checkBtn.className = "flex-1 min-h-[48px] px-4 rounded-2xl bg-indigo-600 hover:bg-indigo-700 active:scale-[0.98] disabled:bg-slate-300 disabled:text-slate-500 disabled:shadow-none text-white font-extrabold text-sm shadow-md shadow-indigo-200/80 transition flex items-center justify-center gap-1.5";
+        checkBtn.innerHTML = prog.attempts > 0 ? "Periksa Ulang" : "Periksa Jawaban";
+      }
+    }
+
+    // ==================== SMART AUTO-CORRECTION ENGINE (ZERO SPOILERS!) ====================
+    function arraysMatch(a, b) {
+      if (a.length !== b.length) return false;
+      const sa = [...a].sort();
+      const sb = [...b].sort();
+      return sa.every((v, i) => v === sb[i]);
+    }
+
+    function handleCheckAction() {
+      const q = getCurrentQuestion();
+      if (!q) return;
+      const prog = getProg(q.id);
+      const solved = isSolved(prog.status);
+
+      if (solved) {
+        if (state.currentIndex < state.activeIds.length - 1) {
+          state.currentIndex++;
+          renderCurrentQuestion();
+        } else {
+          setView("eval");
+        }
+        return;
+      }
+
+      if (state.selection.length === 0) return;
+
+      const attempts = prog.attempts + 1;
+      const isCorrect = arraysMatch(state.selection, q.correct);
+
+      if (isCorrect) {
+        const status = attempts === 1 ? "first_try" : "corrected";
+        state.progress[q.id] = { status, attempts, lastSelected: [...state.selection] };
+        saveState();
+
+        updateHeaderStats();
+        qMetaBadge.textContent = `No. ${q.id} • ${attempts}x cek`;
+        renderOptions(q, true);
+        renderCorrectFeedback(q, state.progress[q.id]);
+        updateBottomBar(true, state.progress[q.id]);
+      } else {
+        state.progress[q.id] = { status: "wrong_pending", attempts, lastSelected: [...state.selection] };
+        saveState();
+
+        qMetaBadge.textContent = `No. ${q.id} • ${attempts}x cek`;
+        renderAutoCorrectionFeedback(q, state.selection);
+        updateBottomBar(false, state.progress[q.id]);
+
+        feedbackCard.classList.remove("animate-shake");
+        void feedbackCard.offsetWidth;
+        feedbackCard.classList.add("animate-shake");
+      }
+
+      setTimeout(() => {
+        feedbackCard.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }, 60);
+    }
+
+    function renderCorrectFeedback(q, prog) {
+      feedbackCard.classList.remove("hidden", "border-amber-300", "bg-amber-50/95");
+      feedbackCard.classList.add("border-emerald-300", "bg-emerald-50/95");
+
+      const title = prog.status === "first_try"
+        ? "Benar pada percobaan pertama! 🎉"
+        : `Hebat! Berhasil dikoreksi pada percobaan ke-${prog.attempts} 👏`;
+
+      feedbackCard.innerHTML = `
+        <div class="flex items-start gap-3">
+          <div class="w-9 h-9 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-extrabold text-lg shrink-0">✓</div>
+          <div class="flex-1 min-w-0">
+            <div class="font-extrabold text-sm text-emerald-900">${title}</div>
+            <p class="text-xs text-emerald-800 mt-1 leading-relaxed">${q.successExplanation}</p>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderAutoCorrectionFeedback(q, selected) {
+      feedbackCard.classList.remove("hidden", "border-emerald-300", "bg-emerald-50/95");
+      feedbackCard.classList.add("border-amber-300", "bg-amber-50/95");
+
+      let diagnosisHTML = "";
+
+      if (q.type === "pg") {
+        const chosen = selected[0];
+        const reason = q.optionHints[chosen] || "Pilihan ini belum sesuai dengan aturan grammar atau konteks kalimat.";
+        diagnosisHTML = `<p class="text-xs text-rose-900 leading-relaxed"><strong>Opsi ${chosen}:</strong> ${reason}</p>`;
+      } else {
+        // PGK: NEVER reveal correct letters. Analyze ONLY wrong picked options + counts of right/missed.
+        const wrongPicked = selected.filter(l => !q.correct.includes(l));
+        const rightPickedCount = selected.filter(l => q.correct.includes(l)).length;
+        const missedCount = q.correct.filter(l => !selected.includes(l)).length;
+        const bullets = [];
+
+        if (wrongPicked.length > 0) {
+          wrongPicked.forEach(letter => {
+            const reason = (q.wrongHints && q.wrongHints[letter])
+              ? q.wrongHints[letter]
+              : "Pernyataan ini tidak sesuai dengan syarat soal.";
+            bullets.push(`<strong>Opsi ${letter} kurang tepat:</strong> ${reason}`);
+          });
+        }
+
+        if (rightPickedCount > 0 && missedCount > 0) {
+          bullets.push(`Kamu sudah memilih <strong>${rightPickedCount} pernyataan yang tepat</strong>, namun masih ada <strong>${missedCount} pernyataan benar lainnya</strong> yang terlewat.`);
+        } else if (rightPickedCount === 0 && missedCount > 0) {
+          bullets.push(`Belum ada pernyataan benar yang terpilih — masih ada <strong>${missedCount} pernyataan benar</strong> yang perlu kamu temukan.`);
+        } else if (wrongPicked.length > 0 && missedCount === 0) {
+          bullets.push(`Semua pernyataan yang benar sebenarnya sudah masuk dalam pilihanmu, namun masih ada <strong>${wrongPicked.length} pilihan salah</strong> yang ikut tercentang.`);
+        }
+
+        diagnosisHTML = `<ul class="list-disc pl-4 space-y-1.5 text-xs text-rose-900 leading-relaxed">${bullets.map(b => `<li>${b}</li>`).join("")}</ul>`;
+      }
+
+      feedbackCard.innerHTML = `
+        <div class="flex items-center gap-2.5 mb-2.5">
+          <span class="w-8 h-8 rounded-xl bg-amber-500 text-white flex items-center justify-center text-sm font-extrabold shrink-0">!</span>
+          <div>
+            <div class="font-extrabold text-sm text-amber-950">Auto-Koreksi • Belum Tepat</div>
+            <div class="text-[11px] font-medium text-amber-800/80">Perbaiki pilihanmu lalu tekan <strong>Periksa Ulang</strong>.</div>
+          </div>
+        </div>
+
+        <div class="bg-rose-50 border border-rose-200 rounded-2xl p-3 mb-2.5">
+          <div class="text-[11px] font-extrabold uppercase tracking-wide text-rose-700 mb-1">❌ Letak Kesalahanmu:</div>
+          ${diagnosisHTML}
+        </div>
+
+        <div class="bg-white border border-amber-200 rounded-2xl p-3">
+          <div class="text-[11px] font-extrabold uppercase tracking-wide text-amber-700 mb-1">🧭 Seharusnya (Petunjuk Aturan):</div>
+          <p class="text-xs text-slate-700 leading-relaxed">${q.ruleGuide}</p>
+        </div>
+      `;
+    }
+
+    // Bottom navigation listeners
+    checkBtn.addEventListener("click", handleCheckAction);
+
+    prevBtn.addEventListener("click", () => {
+      if (state.currentIndex > 0) {
+        state.currentIndex--;
+        renderCurrentQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (state.currentIndex < state.activeIds.length - 1) {
+        state.currentIndex++;
+        renderCurrentQuestion();
+      } else {
+        setView("eval");
+      }
+    });
+
+    // ==================== BOTTOM SHEET: DAFTAR SOAL (1–50) ====================
+    function openDrawer() {
+      const currentQ = getCurrentQuestion();
+      const activeId = currentQ ? currentQ.id : -1;
+      drawerGrid.innerHTML = "";
+
+      QUESTIONS.forEach(q => {
+        const p = getProg(q.id);
+        const isActive = q.id === activeId && state.view === "quiz";
+        const btn = document.createElement("button");
+        btn.type = "button";
+
+        let cls = "h-11 rounded-2xl font-extrabold text-sm flex items-center justify-center transition active:scale-95 relative ";
+        if (isSolved(p.status)) {
+          cls += "bg-emerald-500 text-white shadow-xs";
+        } else if (p.status === "wrong_pending") {
+          cls += "bg-amber-500 text-white shadow-xs";
+        } else {
+          cls += "bg-slate-100 text-slate-600 hover:bg-slate-200";
+        }
+
+        if (isActive) {
+          cls += " ring-2 ring-offset-2 ring-indigo-600";
+        }
+
+        btn.className = cls;
+        btn.innerHTML = `<span>${q.id}</span>${q.type === "pgk" ? '<span class="absolute top-1 right-1.5 w-1.5 h-1.5 rounded-full bg-violet-400"></span>' : ''}`;
+        btn.addEventListener("click", () => {
+          closeDrawer();
+          if (!state.activeIds.includes(q.id)) {
+            applyFilter("all", q.id);
+          } else {
+            state.currentIndex = state.activeIds.indexOf(q.id);
+          }
+          setView("quiz");
+        });
+
+        drawerGrid.appendChild(btn);
+      });
+
+      drawerModal.classList.remove("hidden");
+    }
+
+    function closeDrawer() {
+      drawerModal.classList.add("hidden");
+    }
+
+    openDrawerBtn.addEventListener("click", openDrawer);
+    closeDrawerBtn.addEventListener("click", closeDrawer);
+    drawerModal.addEventListener("click", e => {
+      if (e.target === drawerModal) closeDrawer();
+    });
+    drawerEvalBtn.addEventListener("click", () => {
+      closeDrawer();
+      setView("eval");
+    });
+    drawerResetBtn.addEventListener("click", () => {
+      closeDrawer();
+      resetModal.classList.remove("hidden");
+    });
+
+    // ==================== EVALUATION SCREEN ====================
+    function renderEvaluation() {
+      updateHeaderStats();
+
+      let firstTry = 0;
+      let corrected = 0;
+      let wrongPending = 0;
+      let unanswered = 0;
+
+      QUESTIONS.forEach(q => {
+        const st = getProg(q.id).status;
+        if (st === "first_try") firstTry++;
+        else if (st === "corrected") corrected++;
+        else if (st === "wrong_pending") wrongPending++;
+        else unanswered++;
+      });
+
+      const totalSolved = firstTry + corrected;
+      const totalPct = Math.round((totalSolved / QUESTIONS.length) * 100);
+      const firstPct = Math.round((firstTry / QUESTIONS.length) * 100);
+
+      evalTotalPct.textContent = `${totalPct}%`;
+      evalTotalCount.textContent = `${totalSolved}/50`;
+      evalFirstTryPct.textContent = `${firstPct}%`;
+
+      statSolved.textContent = totalSolved;
+      statWrong.textContent = wrongPending;
+      statUnanswered.textContent = unanswered;
+
+      if (totalSolved === 50 && firstPct >= 80) {
+        evalEmoji.textContent = "🏆";
+        evalSub.textContent = "Luar biasa! Penguasaan materi Chapter 21–25 sangat kuat.";
+      } else if (totalSolved === 50) {
+        evalEmoji.textContent = "🎉";
+        evalSub.textContent = "Hebat! Semua 50 soal sudah berhasil kamu taklukkan.";
+      } else {
+        evalEmoji.textContent = "📈";
+        evalSub.textContent = "Lanjutkan latihan dan manfaatkan Auto-Koreksi sampai 50/50!";
+      }
+
+      // PG vs PGK stats
+      const pgQs = QUESTIONS.filter(q => q.type === "pg");
+      const pgkQs = QUESTIONS.filter(q => q.type === "pgk");
+      const pgSolved = pgQs.filter(q => isSolved(getProg(q.id).status)).length;
+      const pgkSolved = pgkQs.filter(q => isSolved(getProg(q.id).status)).length;
+
+      evalPgScore.textContent = `${pgSolved} / ${pgQs.length}`;
+      evalPgSub.textContent = `${Math.round((pgSolved / pgQs.length) * 100)}% benar`;
+      evalPgkScore.textContent = `${pgkSolved} / ${pgkQs.length}`;
+      evalPgkSub.textContent = `${Math.round((pgkSolved / pgkQs.length) * 100)}% benar`;
+
+      // Per-Chapter breakdown (21–25)
+      evalChapterList.innerHTML = "";
+      [21, 22, 23, 24, 25].forEach(ch => {
+        const chQs = QUESTIONS.filter(q => q.chapter === ch);
+        const chFirst = chQs.filter(q => getProg(q.id).status === "first_try").length;
+        const chCorr = chQs.filter(q => getProg(q.id).status === "corrected").length;
+        const chSolved = chFirst + chCorr;
+
+        const row = document.createElement("div");
+        row.innerHTML = `
+          <div class="flex items-center justify-between text-xs mb-1 gap-2">
+            <span class="font-bold text-slate-700 truncate">Ch. ${ch}: ${CHAPTER_META[ch].title.split(" (")[0]}</span>
+            <span class="font-extrabold text-indigo-700 shrink-0">${chSolved}/${chQs.length} <span class="text-slate-400 font-semibold">(${chFirst}x 1st)</span></span>
+          </div>
+          <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden flex">
+            <div class="h-full bg-emerald-500 transition-all" style="width: ${(chFirst / chQs.length) * 100}%"></div>
+            <div class="h-full bg-indigo-400 transition-all" style="width: ${(chCorr / chQs.length) * 100}%"></div>
+          </div>
+        `;
+        evalChapterList.appendChild(row);
+      });
+
+      // Retry Wrong Questions Button
+      if (wrongPending > 0) {
+        retryWrongBtn.classList.remove("hidden");
+        retryWrongBtn.textContent = `🔁 Ulangi ${wrongPending} Soal yang Masih Salah`;
+      } else {
+        retryWrongBtn.classList.add("hidden");
+      }
+    }
+
+    openEvalBtn.addEventListener("click", () => {
+      setView(state.view === "eval" ? "quiz" : "eval");
+    });
+
+    backToQuizBtn.addEventListener("click", () => setView("quiz"));
+
+    retryWrongBtn.addEventListener("click", () => {
+      applyFilter("wrong", null);
+      setView("quiz");
+    });
+
+    // ==================== RESET MODAL ====================
+    openResetModalBtn.addEventListener("click", () => resetModal.classList.remove("hidden"));
+    cancelResetBtn.addEventListener("click", () => resetModal.classList.add("hidden"));
+    resetModal.addEventListener("click", e => {
+      if (e.target === resetModal) resetModal.classList.add("hidden");
+    });
+    confirmResetBtn.addEventListener("click", () => {
+      state.progress = {};
+      state.lastQuestionId = 1;
+      state.filter = "all";
+      localStorage.removeItem(STORAGE_KEY);
+      resetModal.classList.add("hidden");
+      applyFilter("all", 1);
+      setView("quiz");
+    });
+
+    // ==================== INITIALIZE APP ====================
+    loadState();
+    applyFilter(state.filter, state.lastQuestionId);
+  </script>
+</body>
+</html>
